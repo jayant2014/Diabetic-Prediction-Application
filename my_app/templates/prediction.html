@@ -1,0 +1,62 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="column is-6 is-offset-3">
+    <h4 class="title">Prediction</h4>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
+            </div>
+        {% endif %}
+        {% endwith %}
+        <form class="form-inline" action="http://localhost:5000/result" method="POST"
+        style="background-color: white; width:500px; padding: 20px 0px; 
+        border: 5px solid whitesmoke; text-align:center; opacity:0.9">
+            <br><br>
+            Pregnancies:
+            <input name="PREG" placeholder=" " type="number"
+            min="0" max="100" style="width:150px" required/>
+            <br><br>
+
+            Glucose:
+            <input name="GLUCOSE" placeholder=" " type="number"
+            step="any" min="0" style="width:150px"required/>
+    
+            <br><br>
+            Blood Pressure:
+            <input name="BP" placeholder=" " type="number" step="any"
+            min="0" style="width:150px"required/>
+    
+            <br><br>
+            Skin Thickness:
+            <input name="ST" placeholder=" " type="number" step="any"
+            min="0" style="width:150px"required/>
+    
+            <br><br>
+            Insulin:
+            <input name="INSULIN" placeholder=" " type="number" step="any"
+            min="0" style="width:150px"required/>
+    
+            <br><br>
+            BMI:
+            <input name="BMI" placeholder=" " type="number"
+            min="0" step="any" style="width:150px"required/>
+
+            <br><br>
+            Diabetes Pedigree Function:
+            <input name="DPF" placeholder=" " type="number"
+            step="any" style="width:150px"required/>
+
+            <br><br>
+            Age:
+            <input name="AGE" placeholder=" " type="number"
+            min="0" max="100" style="width:150px"required/>
+    
+            <br><br>
+            <input type="submit" value="PREDICT"/>
+        </form>
+    </div>
+</div>
+{% endblock %}

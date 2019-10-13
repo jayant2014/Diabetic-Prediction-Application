@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="column is-6 is-offset-3">
+    <h3 class="title">Payment for prediction</h3>
+    <div class="box">
+
+    <div class="jumbotron">
+        <div class="column is-offset-0"> <label class="label is-danger"> Per prediction = $10 </label> </div>
+        <form action="{{ url_for('main.checkout') }}" method="POST">
+        <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{ pub_key }}"
+            data-amount="100"
+            data-name="Diabetes Prediction App"
+            data-description="Pay for the prediction. Cost: $10."
+            data-locale="auto">
+          </script>
+        </form>
+      </div>
+    </div>
+</div>
+
+{% endblock %}
