@@ -5,7 +5,7 @@ import stripe
 
 # firebase login management
 config = {
-    "apiKey": "AIzaSyALEW0K_dOC8bsolO4g4eDI1HHXZFSvY7k",
+    "apiKey": "",
     "authDomain": "diabetes-prediction-c1836.web.app",
     "databaseURL": "https://console.firebase.google.com/project/diabetes-prediction-c1836",
     "projectId": "diabetes-prediction-c1836",
@@ -16,8 +16,8 @@ config = {
     }
 
 # setting up stripe test environment
-STRIPE_PUBLISHABLE_KEY = 'pk_test_EnRd92JVdTdIjfAQEDJo9W9d00QRL1dLNp'  
-STRIPE_SECRET_KEY = 'sk_test_l0llepdEjl8JnIMvKyGAV6CI009GGYimLS'
+STRIPE_PUBLISHABLE_KEY = ''  
+STRIPE_SECRET_KEY = ''
 
 stripe.api_key = STRIPE_SECRET_KEY
 
